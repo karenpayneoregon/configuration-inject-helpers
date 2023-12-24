@@ -17,4 +17,9 @@ internal class Operations
         using SqlConnection cn = new(Instance.SecondaryConnection);
         return cn.Query<Categories>(SqlStatements.Categories).ToList();
     }
+    public static List<OrderDetails> OrderDetailsList(int orderId = 3)
+    {
+        using SqlConnection cn = new(Instance.OtherConnection);
+        return cn.Query<OrderDetails>(SqlStatements.OrderDetails, new { OrderId = orderId }).ToList();
+    }
 }

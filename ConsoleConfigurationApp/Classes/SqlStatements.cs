@@ -19,4 +19,18 @@ public class SqlStatements
                Picture
         FROM dbo.Categories;
         """;
+
+    public static string OrderDetails =>
+        """
+        SELECT od.OrderId,
+               od.ProductId,
+               od.UnitPrice,
+               od.Quantity,
+               od.RowTotal,
+               p.ProductName
+        FROM dbo.OrderDetails AS od
+            INNER JOIN dbo.Products AS p
+                ON od.ProductId = p.ProductID
+        WHERE (od.OrderId = @OrderId);
+        """;
 }

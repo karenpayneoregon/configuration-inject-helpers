@@ -10,9 +10,11 @@ internal partial class Program
     {
 
         await RegisterConnectionServices.Configure();
-        
+       
+
         MainConnectionExample();
         SecondConnectionExample();
+        OtherConnectionExample();
 
         Console.ReadLine();
     }
@@ -41,6 +43,25 @@ internal partial class Program
         }
 
         AnsiConsole.Write(categoryTable);
+    }
+
+    private static void OtherConnectionExample()
+    {
+        var list = Operations.OrderDetailsList();
+        var table = CreateOrdersTable();
+        
+        foreach (var item in list)
+        {
+            table.AddRow(
+                item.OrderId.ToString(), 
+                item.ProductId.ToString(), 
+                item.UnitPrice.ToString("C"),
+                item.Quantity.ToString(), 
+                item.RowTotal.ToString("C"), 
+                item.ProductName);
+        }
+
+        AnsiConsole.Write(table);
     }
 }
 
