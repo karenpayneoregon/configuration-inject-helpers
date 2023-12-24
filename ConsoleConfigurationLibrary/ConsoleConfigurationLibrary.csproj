@@ -18,6 +18,9 @@
 		<Description>Provides functionality to read connections strings from appsettings.json using dependency injection</Description>
 		<Copyright>Karen Payne</Copyright>
 		<PackageIcon>assets\BlueInjection64_64.png</PackageIcon>
+		<RepositoryUrl>https://github.com/karenpayneoregon/configuration-inject-helpers</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/karenpayneoregon/configuration-inject-helpers/tree/master/ConsoleConfigurationLibrary</PackageProjectUrl>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 
 	</PropertyGroup>
 
@@ -47,6 +50,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="licenses\LICENSE.txt" Pack="true" PackagePath="LICENSE.txt"/>
+		<None Include="licenses\LICENSE.txt" Pack="True" PackagePath="\" />
 	</ItemGroup>
 </Project>
