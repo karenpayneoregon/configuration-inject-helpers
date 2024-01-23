@@ -23,7 +23,7 @@ internal partial class Program
     {
         var list = Operations.TrackList(129);
         var trackTable = CreateTrackTable();
-
+    
         foreach (var track in list)
         {
             trackTable.AddRow(track.TrackId.ToString(), track.Name, track.Milliseconds.ShowTime());
