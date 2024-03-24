@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreSampleApp", "EntityFrameworkCoreSampleApp\EntityFrameworkCoreSampleApp.csproj", "{4FBC9D5F-EB2F-4BAE-B881-795804184794}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{16E60B3E-3D6A-4DDD-A935-2B834D85B379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16E60B3E-3D6A-4DDD-A935-2B834D85B379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16E60B3E-3D6A-4DDD-A935-2B834D85B379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FBC9D5F-EB2F-4BAE-B881-795804184794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBC9D5F-EB2F-4BAE-B881-795804184794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBC9D5F-EB2F-4BAE-B881-795804184794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBC9D5F-EB2F-4BAE-B881-795804184794}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

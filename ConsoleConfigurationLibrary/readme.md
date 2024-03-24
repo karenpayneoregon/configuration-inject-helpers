@@ -1,5 +1,8 @@
 ﻿# About
 
+
+![Blue Injection64 64](assets/BlueInjection64_64.png)
+
 Provides easy access to connection strings in a Console project's appsettings.json file.
 
 ## Example

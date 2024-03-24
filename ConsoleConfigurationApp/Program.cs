@@ -21,7 +21,7 @@ internal partial class Program
 
     private static void MainConnectionExample()
     {
-        var list = Operations.TrackList(129);
+        var list = Operations.TrackListUsingDapper(129);
         var trackTable = CreateTrackTable();
     
         foreach (var track in list)

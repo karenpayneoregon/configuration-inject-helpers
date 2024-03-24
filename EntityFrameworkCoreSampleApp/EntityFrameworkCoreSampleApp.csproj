@@ -9,13 +9,15 @@
 
 	<ItemGroup>
 	  <None Remove="readme.md" />
-	  <None Remove="Scripts\readme.md" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Content Include="assets\csharp.ico" />
 	  <Content Include="readme.md" />
-	  <Content Include="Scripts\readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ConfigurationLibrary" Version="1.0.6" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -23,18 +25,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<!-- ReSharper disable once VulnerablePackage -->
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ConsoleConfigurationLibrary\ConsoleConfigurationLibrary.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Spectre.Console" Version="0.46.0" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\ConsoleConfigurationLibrary\ConsoleConfigurationLibrary.csproj" />
-	</ItemGroup>
-
-
-	<ItemGroup>
-		<PackageReference Include="Dapper" Version="2.1.35" />
-		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
-	</ItemGroup>
 	<ItemGroup>
 	  <None Update="appsettings.json">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -43,6 +45,10 @@
 	    <PackagePath>\</PackagePath>
 	    <Pack>True</Pack>
 	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Scripts\" />
 	</ItemGroup>
 
 </Project>
