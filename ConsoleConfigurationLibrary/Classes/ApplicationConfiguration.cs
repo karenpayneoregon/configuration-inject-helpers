@@ -1,25 +1,18 @@
 ﻿using ConsoleConfigurationLibrary.Models;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ConsoleConfigurationLibrary.Classes;
 public class ApplicationConfiguration
 {
+  
     /// <summary>
-    /// Read sections from appsettings.json
+    /// Start-up code which needs to run first before reading any connection strings from appsettings.json
     /// </summary>
-    public static IConfigurationRoot ConfigurationRoot() =>
-        new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: false)
-            .AddEnvironmentVariables()
-            .Build();
-
     public static ServiceCollection ConfigureServices()
     {
         static void ConfigureService(IServiceCollection services)
         {
-            services.Configure<ConnectionStrings>(ConfigurationRoot().GetSection(nameof(ConnectionStrings)));
+            services.Configure<ConnectionStrings>(Configuration.Root().GetSection(nameof(ConnectionStrings)));
             services.AddTransient<SetupServices>();
         }
 
@@ -30,5 +23,3 @@ public class ApplicationConfiguration
 
     }
 }
-
-

@@ -5,9 +5,9 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<Company>Karen Payne</Company>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<FileVersion>1.0.0.0</FileVersion>
-		<Version>1.0.0</Version>
+		<AssemblyVersion>1.0.0.1</AssemblyVersion>
+		<FileVersion>1.0.0.1</FileVersion>
+		<Version>1.0.0.1</Version>
 		<PackageTags>csharp;appsettings.json;ef-core</PackageTags>
 		<!--<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>-->
 		<PackageReadmeFile>readme.md</PackageReadmeFile>

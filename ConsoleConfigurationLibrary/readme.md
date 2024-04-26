@@ -57,3 +57,7 @@ And Other connection string follows the same as both of the above.
 See the project ConsoleConfigurationApp.
 
 - Run the scripts under the script folder before run the project.
+
+## Release notes
+
+- 04/26/2024 no functionality change, simple refactor.
