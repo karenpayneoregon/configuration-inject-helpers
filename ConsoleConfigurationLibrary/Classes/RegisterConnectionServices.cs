@@ -4,6 +4,9 @@ namespace ConsoleConfigurationLibrary.Classes;
 
 public static class RegisterConnectionServices
 {
+    /// <summary>
+    /// Initialize the service and read connection strings
+    /// </summary>
     public static async Task Configure()
     {
         var services = ApplicationConfiguration.ConfigureServices();
