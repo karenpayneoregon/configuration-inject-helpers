@@ -4,11 +4,23 @@ namespace ConsoleConfigurationLibrary.Classes;
 
 public class Configuration
 {
-    public static IConfigurationRoot Root() =>
+    /// <summary>
+    /// Setup to read appsettings.json
+    /// </summary>
+    public static IConfigurationRoot JsonRoot() =>
         new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: false)
             .AddEnvironmentVariables()
+            .Build();
+
+    /// <summary>
+    /// Setup to read app.config
+    /// </summary>
+    public static IConfigurationRoot XmlRoot() =>
+        new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddXmlFile("app.config", optional: true, reloadOnChange: true)
             .Build();
 
 }

@@ -12,7 +12,7 @@ public class ApplicationConfiguration
     {
         static void ConfigureService(IServiceCollection services)
         {
-            services.Configure<ConnectionStrings>(Configuration.Root().GetSection(nameof(ConnectionStrings)));
+            services.Configure<ConnectionStrings>(Configuration.JsonRoot().GetSection(nameof(ConnectionStrings)));
             services.AddTransient<SetupServices>();
         }
 

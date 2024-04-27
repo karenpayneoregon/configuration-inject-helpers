@@ -18,7 +18,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code samples", "Code sample
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumHasConversionDapper1", "EnumHasConversionDapper1\EnumHasConversionDapper1.csproj", "{C370BB1C-7AE1-40A3-A034-1AD336614441}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadSettingsApp", "ReadSettingsApp\ReadSettingsApp.csproj", "{71B8E20C-B4AA-4603-8E03-FA172F3E7554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadSettingsApp", "ReadSettingsApp\ReadSettingsApp.csproj", "{71B8E20C-B4AA-4603-8E03-FA172F3E7554}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadSettings_XML_App", "ReadSettings_XML_App\ReadSettings_XML_App.csproj", "{25678915-071C-4FC2-B31F-65C554D4AD63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,10 @@ Global
 		{71B8E20C-B4AA-4603-8E03-FA172F3E7554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71B8E20C-B4AA-4603-8E03-FA172F3E7554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71B8E20C-B4AA-4603-8E03-FA172F3E7554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25678915-071C-4FC2-B31F-65C554D4AD63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25678915-071C-4FC2-B31F-65C554D4AD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25678915-071C-4FC2-B31F-65C554D4AD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25678915-071C-4FC2-B31F-65C554D4AD63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{4FBC9D5F-EB2F-4BAE-B881-795804184794} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
 		{C370BB1C-7AE1-40A3-A034-1AD336614441} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
 		{71B8E20C-B4AA-4603-8E03-FA172F3E7554} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
+		{25678915-071C-4FC2-B31F-65C554D4AD63} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2438319A-1099-46A2-8345-396ACFB4B2B4}
