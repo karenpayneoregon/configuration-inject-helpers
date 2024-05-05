@@ -19,5 +19,6 @@ public static class AppConfigService
         => Configuration.XmlRoot()["AppKey"];
 
     public static Logging ApplicationLogging()
-        => Configuration.XmlRoot().GetSection(Logging.Position).Get<Logging>();
+        => Configuration.XmlRoot().GetSection(Logging.Position)
+            .Get<Logging>();
 }

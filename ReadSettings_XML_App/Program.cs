@@ -8,10 +8,16 @@ internal partial class Program
 {
     static void Main(string[] args)
     {
-        ConnectionStringOptions connections = AppConfigService.ConnectionStrings();
-        PositionOptions generalSettings = AppConfigService.GeneralSettings();
+        ConnectionStringOptions connections = 
+            AppConfigService.ConnectionStrings();
+
+        PositionOptions generalSettings = 
+            AppConfigService.GeneralSettings();
+
         var key = AppConfigService.ApplicationKey();
-        var appLogging = AppConfigService.ApplicationLogging();
+
+        Logging appLogging = 
+            AppConfigService.ApplicationLogging();
         
         AnsiConsole.MarkupLine("[cyan]Connections[/]");
         Console.WriteLine(ObjectDumper.Dump(connections));
