@@ -17,7 +17,7 @@ internal class SetupServices
     /// </summary>
     public void GetConnectionStrings()
     {
-        DataConnections.Instance.MainConnection = _options.MainConnection;
+        DataConnections.Instance.Main = _options.MainConnection;
     }
     public void GetEntitySettings()
     {
