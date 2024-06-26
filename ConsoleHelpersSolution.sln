@@ -22,7 +22,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadSettingsApp", "ReadSett
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadSettings_XML_App", "ReadSettings_XML_App\ReadSettings_XML_App.csproj", "{25678915-071C-4FC2-B31F-65C554D4AD63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{BE6E9723-FAD8-43CC-A63C-5D4EFAC51EA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{BE6E9723-FAD8-43CC-A63C-5D4EFAC51EA8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP_WindowsForms", "KP_WindowsForms\KP_WindowsForms.csproj", "{BD944F95-0A1B-4162-B2A1-EF31C1C1A8A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +60,10 @@ Global
 		{BE6E9723-FAD8-43CC-A63C-5D4EFAC51EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE6E9723-FAD8-43CC-A63C-5D4EFAC51EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE6E9723-FAD8-43CC-A63C-5D4EFAC51EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD944F95-0A1B-4162-B2A1-EF31C1C1A8A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD944F95-0A1B-4162-B2A1-EF31C1C1A8A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD944F95-0A1B-4162-B2A1-EF31C1C1A8A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD944F95-0A1B-4162-B2A1-EF31C1C1A8A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{71B8E20C-B4AA-4603-8E03-FA172F3E7554} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
 		{25678915-071C-4FC2-B31F-65C554D4AD63} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
 		{BE6E9723-FAD8-43CC-A63C-5D4EFAC51EA8} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
+		{BD944F95-0A1B-4162-B2A1-EF31C1C1A8A7} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2438319A-1099-46A2-8345-396ACFB4B2B4}
