@@ -1,4 +1,5 @@
-﻿using ConsoleConfigurationLibrary.Classes;
+﻿
+using ConsoleConfigurationLibrary.Classes;
 using Microsoft.Extensions.Configuration;
 using static ReadSettingsApp.Classes.SpectreConsoleHelpers;
 
@@ -51,7 +52,7 @@ internal partial class Program
 public class AppSettings
 {
     public bool? UseMemory { get; set; }
-    public CorsSettings? Cors { get; set; }
+    public CorsSettings Cors { get; set; }
 }
 
 public class CorsSettings

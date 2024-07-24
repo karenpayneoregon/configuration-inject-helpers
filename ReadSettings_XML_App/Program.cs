@@ -8,6 +8,8 @@ internal partial class Program
 {
     static void Main(string[] args)
     {
+        
+
         ConnectionStringOptions connections = 
             AppConfigService.ConnectionStrings();
 
@@ -35,6 +37,16 @@ internal partial class Program
 
         AnsiConsole.MarkupLine("[cyan]Log settings[/]");
         Console.WriteLine(ObjectDumper.Dump(appLogging));
+
+        LineSeparator();
+
+        var (section1, section2, section3, section4) = AppConfigService.Sections();
+
+        AnsiConsole.MarkupLine("[cyan]First section[/]");
+        Console.WriteLine(ObjectDumper.Dump(section1));
+
+        AnsiConsole.MarkupLine("[cyan]Last section[/]");
+        Console.WriteLine(ObjectDumper.Dump(section4));
 
         Console.ReadLine();
     }
