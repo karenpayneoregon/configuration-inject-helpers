@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OverrideSettingsFromCommandLine": {
+      "commandName": "Project",
+      "commandLineArgs": "--ConnectionStrings:MainConnection=\"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=NorthWind2024;Integrated Security=True;Encrypt=False\""
+    }
+  }
+}

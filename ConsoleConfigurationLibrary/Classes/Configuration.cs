@@ -14,6 +14,14 @@ public class Configuration
             .AddEnvironmentVariables()
             .Build();
 
+    public static IConfigurationRoot JsonRootCommandLine(string[] args) =>
+        new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false)
+            .AddEnvironmentVariables()
+            .AddCommandLine(args)
+            .Build();
+
     /// <summary>
     /// Setup to read app.config
     /// </summary>
