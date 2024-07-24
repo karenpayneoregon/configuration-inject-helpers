@@ -17,9 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<!--<PackageReference Include="ConfigurationLibrary" Version="1.0.6" />-->
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
-		<PackageReference Include="Dapper" Version="2.1.35" />
 	</ItemGroup>	
 
 	<ItemGroup>
@@ -27,8 +25,8 @@
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="ConsoleHelperLibrary" Version="1.0.2" />
-		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.5" />
-		<PackageReference Include="ObjectDumper.NET" Version="4.1.17" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
+		<PackageReference Include="ObjectDumper.NET" Version="4.2.7" />
 	</ItemGroup>
 
 
@@ -40,6 +38,10 @@
 		<None Update="appsettings.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Models\" />
 	</ItemGroup>
 
 

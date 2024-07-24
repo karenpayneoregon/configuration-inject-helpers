@@ -1,7 +1,6 @@
-﻿using ConsoleConfigurationLibrary.Models;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Data.SqlClient;
-using static ConsoleConfigurationLibrary.Classes.CommandLineOverride;
+﻿using Microsoft.Data.SqlClient;
+using OverrideSettingsFromCommandLine.Classes;
+using static OverrideSettingsFromCommandLine.Classes.SpectreConsoleHelpers;
 
 namespace OverrideSettingsFromCommandLine;
 
@@ -11,18 +10,26 @@ internal partial class Program
     {
 
         // see debug property for command line override of MainConnection
-        string mainConnection = BuilderRoot(args).GetConnectionString(
-            nameof(ConnectionStrings.MainConnection));
+        var mainConnection = Configuration.ConnectionStrings(args);
 
-        // Yep we can create and examine connections
         SqlConnectionStringBuilder builder = new(mainConnection);
+
+        /*
+         * For demonstration purposes, we will check if the database exists
+         */
+        if (SqlServerHelpers.LocalDbDatabaseExists(builder.InitialCatalog))
+        {
+            using SqlConnection cn = new() { ConnectionString = mainConnection! };
+            cn.Open();
+            AnsiConsole.MarkupLine($"[yellow]Current catalog:[/] [cyan]{builder.InitialCatalog}[/] [yellow]opened successfully[/]");
+        }
+        else
+        {
+            AnsiConsole.MarkupLine($"[white]Database[/] [red]{builder.InitialCatalog}[/][white] not found![/]");
+        }
+
         
-        using SqlConnection cn = new() { ConnectionString = mainConnection! };
-        cn.Open();
+        ExitPrompt();
 
-
-        AnsiConsole.MarkupLine($"[cyan]{builder.InitialCatalog}[/]");
-
-        Console.ReadLine();
     }
 }
