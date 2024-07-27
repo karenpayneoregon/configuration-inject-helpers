@@ -9,6 +9,7 @@ internal partial class Program
     static void Main(string[] args)
     {
 
+        
         // see debug property for command line override of MainConnection
         var mainConnection = Configuration.ConnectionStrings(args);
 

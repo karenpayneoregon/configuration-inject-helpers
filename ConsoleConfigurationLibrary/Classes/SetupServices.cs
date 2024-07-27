@@ -1,14 +1,18 @@
 ﻿using ConsoleConfigurationLibrary.Models;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using System.Runtime;
 
 namespace ConsoleConfigurationLibrary.Classes;
 public class SetupServices
 {
     private readonly ConnectionStrings _options;
+    private readonly EntityConfiguration _settings;
 
-    public SetupServices(IOptions<ConnectionStrings> options)
+    public SetupServices(IOptions<ConnectionStrings> options, IOptions<EntityConfiguration> settings)
     {
         _options = options.Value;
+        _settings = settings.Value;
     }
     /// <summary>
     /// Read connection strings from appsettings
@@ -20,10 +24,23 @@ public class SetupServices
         AppConnections.Instance.OtherConnection = _options.OtherConnection;
     }
 
-    //private static async Task Setup()
-    //{
-    //    var services = ApplicationConfiguration.ConfigureServices();
-    //    await using var serviceProvider = services.BuildServiceProvider();
-    //    serviceProvider.GetService<SetupServices>()!.GetConnectionStrings();
-    //}
+    /// <summary>
+    /// Gets the entity settings from configuration.
+    /// </summary>
+    public void GetEntitySettings()
+    {
+        EntitySettings.Instance.CreateNew = _settings.CreateNew;
+    }
+
+    public static async Task Setup()
+    {
+        var services = ApplicationConfiguration.ConfigureServices();
+        await using var serviceProvider = services.BuildServiceProvider();
+        serviceProvider.GetService<SetupServices>()!.GetConnectionStrings();
+        serviceProvider.GetService<SetupServices>()!.GetEntitySettings();
+    }
+
+ 
+
+
 }

@@ -22,6 +22,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="ConsoleHelperLibrary" Version="1.0.2" />
+		<PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -49,6 +50,12 @@
 
 	<ItemGroup>
 	  <Folder Include="Scripts\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AdditionalFiles Include="..\DependencyValidation1\DependencyValidation1.layerdiagram" Link="DependencyValidation1.layerdiagram">
+	    <Visible>False</Visible>
+	  </AdditionalFiles>
 	</ItemGroup>
 
 </Project>

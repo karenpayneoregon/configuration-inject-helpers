@@ -13,6 +13,7 @@ public class ApplicationConfiguration
         static void ConfigureService(IServiceCollection services)
         {
             services.Configure<ConnectionStrings>(Configuration.JsonRoot().GetSection(nameof(ConnectionStrings)));
+            services.Configure<EntityConfiguration>(Configuration.JsonRoot().GetSection(nameof(EntityConfiguration)));
             services.AddTransient<SetupServices>();
         }
 

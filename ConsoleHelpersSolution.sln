@@ -26,7 +26,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP_WindowsForms", "KP_WindowsForms\KP_WindowsForms.csproj", "{BD944F95-0A1B-4162-B2A1-EF31C1C1A8A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverrideSettingsFromCommandLine", "OverrideSettingsFromCommandLine\OverrideSettingsFromCommandLine.csproj", "{96C5452D-8ED8-4CF7-BED8-84528AC01FF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverrideSettingsFromCommandLine", "OverrideSettingsFromCommandLine\OverrideSettingsFromCommandLine.csproj", "{96C5452D-8ED8-4CF7-BED8-84528AC01FF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

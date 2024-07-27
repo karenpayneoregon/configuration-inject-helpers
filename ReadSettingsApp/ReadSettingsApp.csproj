@@ -17,11 +17,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AdditionalFiles Include="..\DependencyValidation1\DependencyValidation1.layerdiagram" Link="DependencyValidation1.layerdiagram">
+	    <Visible>False</Visible>
+	  </AdditionalFiles>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="ConfigurationLibrary" Version="1.0.4" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="ConsoleHelperLibrary" Version="1.0.0" />
+		<PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
 	</ItemGroup>
 
 	<ItemGroup>

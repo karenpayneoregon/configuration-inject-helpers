@@ -8,3 +8,5 @@ public class ConnectionStrings
     public string SecondaryConnection { get; set; }
     public string OtherConnection { get; set; }
 }
+
+
