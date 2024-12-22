@@ -1,7 +1,7 @@
 ﻿using ConsoleConfigurationLibrary.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using System.Runtime;
+
 
 namespace ConsoleConfigurationLibrary.Classes;
 public class SetupServices
@@ -39,8 +39,4 @@ public class SetupServices
         serviceProvider.GetService<SetupServices>()!.GetConnectionStrings();
         serviceProvider.GetService<SetupServices>()!.GetEntitySettings();
     }
-
- 
-
-
 }

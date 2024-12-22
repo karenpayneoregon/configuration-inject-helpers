@@ -7,6 +7,7 @@ public partial class MainForm : Form
     {
         InitializeComponent();
         var instanceMainConnection = DataConnections.Instance.Main;
+        var instanceCreateNew = EntitySettings.Instance.CreateNew;
     }
 
 }

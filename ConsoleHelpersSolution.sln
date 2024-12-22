@@ -28,6 +28,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP_WindowsForms", "KP_Windo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverrideSettingsFromCommandLine", "OverrideSettingsFromCommandLine\OverrideSettingsFromCommandLine.csproj", "{96C5452D-8ED8-4CF7-BED8-84528AC01FF7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecretsLibrary", "SecretsLibrary\SecretsLibrary.csproj", "{2B973D2C-940E-4901-A9CB-AF1015447458}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{96C5452D-8ED8-4CF7-BED8-84528AC01FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96C5452D-8ED8-4CF7-BED8-84528AC01FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96C5452D-8ED8-4CF7-BED8-84528AC01FF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B973D2C-940E-4901-A9CB-AF1015447458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B973D2C-940E-4901-A9CB-AF1015447458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B973D2C-940E-4901-A9CB-AF1015447458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B973D2C-940E-4901-A9CB-AF1015447458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{BE6E9723-FAD8-43CC-A63C-5D4EFAC51EA8} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
 		{BD944F95-0A1B-4162-B2A1-EF31C1C1A8A7} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
 		{96C5452D-8ED8-4CF7-BED8-84528AC01FF7} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
+		{2B973D2C-940E-4901-A9CB-AF1015447458} = {E241D7AF-10D3-49A8-BC5D-5FF27841E338}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2438319A-1099-46A2-8345-396ACFB4B2B4}
