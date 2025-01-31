@@ -16,11 +16,11 @@
 		<Content Include="readme.md" />
 	</ItemGroup>
 
-	<ItemGroup>
+	<!--<ItemGroup>
 	  <AdditionalFiles Include="..\DependencyValidation1\DependencyValidation1.layerdiagram" Link="DependencyValidation1.layerdiagram">
 	    <Visible>False</Visible>
 	  </AdditionalFiles>
-	</ItemGroup>
+	</ItemGroup>-->
 
 	<ItemGroup>
 		<!--<PackageReference Include="ConfigurationLibrary" Version="1.0.6" />-->
