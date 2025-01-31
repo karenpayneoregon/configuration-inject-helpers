@@ -5,6 +5,8 @@
 
 Provides easy access to connection strings in a Console project's appsettings.json file.
 
+01/2025 - Updated external NuGet packages
+
 ## Example
 
 With the following appsettings.json file
