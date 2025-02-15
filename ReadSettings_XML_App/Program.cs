@@ -18,8 +18,7 @@ internal partial class Program
 
         var key = AppConfigService.ApplicationKey();
 
-        Logging appLogging = 
-            AppConfigService.ApplicationLogging();
+        Logging appLogging = AppConfigService.ApplicationLogging();
         
         AnsiConsole.MarkupLine("[cyan]Connections[/]");
         Console.WriteLine(ObjectDumper.Dump(connections));

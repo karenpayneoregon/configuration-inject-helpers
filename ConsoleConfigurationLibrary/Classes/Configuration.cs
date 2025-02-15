@@ -1,12 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Reflection;
-using System;
 
 namespace ConsoleConfigurationLibrary.Classes;
 
 public class Configuration
 {
-
     /// <summary>
     /// Builds and returns an <see cref="IConfigurationRoot"/> object configured to read settings from a JSON file.
     /// </summary>
@@ -18,6 +16,17 @@ public class Configuration
             .AddEnvironmentVariables()
             .Build();
 
+    /// <summary>
+    /// Builds and returns an <see cref="IConfigurationRoot"/> object configured to read settings from a specified JSON file.
+    /// </summary>
+    /// <param name="fileName">The name of the JSON file to read configuration settings from.</param>
+    /// <returns>An <see cref="IConfigurationRoot"/> object that reads configuration settings from the specified JSON file and environment variables.</returns>
+    public static IConfigurationRoot JsonRoot(string fileName) =>
+        new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile(fileName, optional: false)
+            .AddEnvironmentVariables()
+            .Build();
     /// <summary>
     /// Builds and returns an <see cref="IConfigurationRoot"/> object configured to read settings from JSON files,
     /// user secrets, and environment variables.
@@ -49,12 +58,14 @@ public class Configuration
             .AddEnvironmentVariables()
             .AddCommandLine(args)
             .Build();
-
-
+    
     /// <summary>
     /// Builds and returns an <see cref="IConfigurationRoot"/> object configured to read settings from an XML file.
     /// </summary>
-    /// <returns>An <see cref="IConfigurationRoot"/> object that reads configuration settings from "app.config" and environment variables.</returns>
+    /// <returns>
+    /// An <see cref="IConfigurationRoot"/> object that reads configuration settings from "app.config"
+    /// and environment variables.
+    /// </returns>
     public static IConfigurationRoot XmlRoot() =>
         new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
