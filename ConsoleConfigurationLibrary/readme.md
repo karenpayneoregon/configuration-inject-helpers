@@ -7,6 +7,8 @@ Provides easy access to connection strings in a Console project's appsettings.js
 
 01/2025 - Updated external NuGet packages
 
+02/2025 Added overload for `Configuration.JsonRoot` which accepts a json file rather than the base method which is hard coded to appsettings.json. The overload is for testing.
+
 ## Example
 
 With the following appsettings.json file
