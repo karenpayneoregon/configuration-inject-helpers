@@ -1,6 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 
 namespace ConsoleConfigurationLibrary.Classes;
+/// <summary>
+/// Provides functionality to override configuration settings using command line arguments.
+/// </summary>
 public class CommandLineOverride
 {
     /// <summary>

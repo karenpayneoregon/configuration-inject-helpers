@@ -2,6 +2,13 @@
 
 namespace ConsoleConfigurationLibrary.Classes
 {
+    /// <summary>
+    /// Provides helper methods for working with application configuration settings.
+    /// </summary>
+    /// <remarks>
+    /// This class includes utility methods to facilitate interaction with configuration sections,
+    /// such as checking for the existence of specific configuration sections.
+    /// </remarks>
     public class Helpers
     {
         /// <summary>

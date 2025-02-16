@@ -1,4 +1,7 @@
 ﻿namespace ConsoleConfigurationLibrary.Models;
+/// <summary>
+/// Represents the configuration settings for an entity within the application.
+/// </summary>
 public class EntityConfiguration
 {
     /// <summary>

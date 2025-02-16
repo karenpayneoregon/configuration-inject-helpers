@@ -2,6 +2,14 @@
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ConsoleConfigurationLibrary.Classes;
+/// <summary>
+/// Provides configuration methods for setting up application services, including dependency injection
+/// and configuration bindings for connection strings and entity settings.
+/// </summary>
+/// <remarks>
+/// This class is responsible for initializing and configuring the application's services, ensuring
+/// that all necessary dependencies and configurations are properly set up before the application starts.
+/// </remarks>
 public class ApplicationConfiguration
 {
   

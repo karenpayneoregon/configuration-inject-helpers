@@ -3,6 +3,10 @@ using System.Reflection;
 
 namespace ConsoleConfigurationLibrary.Classes;
 
+/// <summary>
+/// Provides methods to build and retrieve configuration settings from various sources, 
+/// including JSON files, XML files, user secrets, environment variables, and command-line arguments.
+/// </summary>
 public class Configuration
 {
     /// <summary>
