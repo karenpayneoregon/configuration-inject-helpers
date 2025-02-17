@@ -44,7 +44,43 @@ namespace ConsoleConfigurationLibrary.Classes
         /// var createNewValue = GetSetting&lt;bool&gt;(nameof(EntityConfiguration), nameof(EntityConfiguration.CreateNew));
         /// </code>
         /// </example>
-        public static T GetSetting<T>(string section, string name) where T : new()
+        public static T GetSetting1<T>(string section, string name) where T : new()
+        {
+            if (string.IsNullOrWhiteSpace(name)) return default(T);
+
+            try
+            {
+                return Configuration.JsonRoot().GetSection(section).GetValue<T>(name);
+            }
+            catch
+            {
+                return default(T); // TODO:
+            }
+        }
+        /// <summary>
+        /// Retrieves a strongly-typed value from the specified configuration section and key.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The type of the value to retrieve.
+        /// </typeparam>
+        /// <param name="section">
+        /// The name of the configuration section containing the desired setting.
+        /// </param>
+        /// <param name="name">
+        /// The key of the setting within the specified section.
+        /// </param>
+        /// <returns>
+        /// The value of the specified setting as type <typeparamref name="T"/> if found; otherwise, the default value of <typeparamref name="T"/>.
+        /// </returns>
+        /// <remarks>
+        /// If the specified section or key is invalid, or if an error occurs during retrieval, the method returns the default value of <typeparamref name="T"/>.
+        /// </remarks>
+        /// <example>
+        /// <code>
+        /// var timeoutValue = GetSetting&lt;int&gt;("ConnectionSettings", "Timeout");
+        /// </code>
+        /// </example>
+        public static T GetSetting<T>(string section, string name)
         {
             if (string.IsNullOrWhiteSpace(name)) return default(T);
 
