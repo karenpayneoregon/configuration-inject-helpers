@@ -39,7 +39,7 @@ internal partial class Program
 
         LineSeparator();
 
-        var (section1, section2, section3, section4) = AppConfigService.Sections();
+        var (section1, _, _, section4) = AppConfigService.Sections();
 
         AnsiConsole.MarkupLine("[cyan]First section[/]");
         Console.WriteLine(ObjectDumper.Dump(section1));

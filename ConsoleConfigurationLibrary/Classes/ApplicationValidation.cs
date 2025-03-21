@@ -69,7 +69,7 @@ public class ApplicationValidation
     /// </remarks>
     public static void ValidateOnStart<T>(string sectionName, Expression<Func<T, string>> propertySelector) where T : class
     {
-        if (ConnectionHelpers.MainConnectionStringsSectionExist())
+        if (ConnectionHelpers.SectionExists(sectionName))
         {
             var section = JsonRoot().GetRequiredSection(sectionName).Get<T>();
 
@@ -105,17 +105,11 @@ public class ApplicationValidation
     /// <exception cref="ArgumentException">
     /// Thrown if the provided <paramref name="propertySelector"/> expression is invalid or does not represent a property.
     /// </exception>
-    private static string GetPropertyName<T>(Expression<Func<T, string>> propertySelector)
-    {
-        if (propertySelector.Body is MemberExpression memberExpression)
+    private static string GetPropertyName<T>(Expression<Func<T, string>> propertySelector) =>
+        propertySelector.Body switch
         {
-            return memberExpression.Member.Name;
-        }
-        else if (propertySelector.Body is UnaryExpression { Operand: MemberExpression operandExpression })
-        {
-            return operandExpression.Member.Name;
-        }
-
-        throw new ArgumentException("Invalid property selector expression", nameof(propertySelector));
-    }
+            MemberExpression memberExpression => memberExpression.Member.Name,
+            UnaryExpression { Operand: MemberExpression operandExpression } => operandExpression.Member.Name,
+            _ => throw new ArgumentException("Invalid property selector expression", nameof(propertySelector))
+        };
 }
