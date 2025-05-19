@@ -73,24 +73,71 @@ public class ApplicationValidation
         {
             var section = JsonRoot().GetRequiredSection(sectionName).Get<T>();
 
-            if (section is not null)
+            if (section is null) return;
+            var compiledSelector = propertySelector.Compile();
+            var propertyName = GetPropertyName(propertySelector);
+            var value = compiledSelector(section);
+            if (value is not null)
             {
-                var compiledSelector = propertySelector.Compile();
-                var propertyName = GetPropertyName(propertySelector);
-                var value = compiledSelector(section);
-                if (value is not null)
-                {
-                    Connection.Validator(value);
-                }
-                else
-                {
-                    throw new InvalidOperationException($"The required property '{propertyName}' is missing");
-                }
+                Connection.Validator(value);
+            }
+            else
+            {
+                throw new InvalidOperationException($"The required property '{propertyName}' is missing");
             }
         }
         else
         {
             throw new InvalidOperationException($"The required configuration section '{sectionName}' is missing.");
+        }
+    }
+
+    /// <summary>
+    /// Validates the specified configuration section and its properties during application startup.
+    /// </summary>
+    /// <typeparam name="T">
+    /// The type of the configuration section to validate. This type must be a reference type.
+    /// </typeparam>
+    /// <param name="sectionName">
+    /// The name of the configuration section to validate.
+    /// </param>
+    /// <param name="propertySelectors">
+    /// An array of expressions representing the properties of the configuration section to validate.
+    /// </param>
+    /// <exception cref="InvalidOperationException">
+    /// Thrown when the specified configuration section is missing, or when any of the required properties
+    /// in the section are missing or invalid.
+    /// </exception>
+    /// <remarks>
+    /// This method ensures that the specified configuration section exists and validates the values of the
+    /// provided properties. If a property is missing or invalid, an exception is thrown to prevent the 
+    /// application from starting with incomplete or incorrect configuration.
+    /// </remarks>
+    public static void ValidateOnStart<T>(string sectionName, params Expression<Func<T, string>>[] propertySelectors) where T : class
+    {
+        if (!ConnectionHelpers.SectionExists(sectionName))
+        {
+            throw new InvalidOperationException($"The required configuration section '{sectionName}' is missing.");
+        }
+
+        var section = JsonRoot().GetRequiredSection(sectionName).Get<T>();
+
+        if (section is null) return;
+
+        foreach (var selector in propertySelectors)
+        {
+            var compiledSelector = selector.Compile();
+            var propertyName = GetPropertyName(selector);
+            var value = compiledSelector(section);
+
+            if (value is not null)
+            {
+                Connection.Validator(value);
+            }
+            else
+            {
+                throw new InvalidOperationException($"The required property '{propertyName}' is missing.");
+            }
         }
     }
 

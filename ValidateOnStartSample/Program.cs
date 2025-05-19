@@ -5,20 +5,20 @@ namespace ValidateOnStartSample;
 
 internal partial class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
         try
         {
             ApplicationValidation.ValidateOnStart<DatabaseSettings>(nameof(DatabaseSettings), 
                     settings => settings.ConnectionString);
 
-            Console.WriteLine("Configuration is valid.");
+            AnsiConsole.MarkupLine("[green]Configuration is valid.[/]");
         }
         catch (InvalidOperationException ex)
         {
-            Console.WriteLine($"Configuration validation failed: {ex.Message}");
+            AnsiConsole.MarkupLine($"[red]Configuration validation failed:[/] [cyan]{ex.Message}[/]");
         }
-        AnsiConsole.MarkupLine("[yellow]Hello[/]");
+        AnsiConsole.MarkupLine("[yellow]Exit[/]");
         Console.ReadLine();
     }
 }
