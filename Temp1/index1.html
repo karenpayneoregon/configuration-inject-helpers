@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Bootstrap 5 input-group with focus</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+
+    <script src="lib/debugHelper.js"></script>
+
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <style>
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Main <span> sub main</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="first_name">First</span>
+                        <input type="text"
+                               class="form-control"
+                               id="first_name_input"
+                               aria-label="first name entry"
+                               value="Karen">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="last_name">Last</span>
+                        <input type="text"
+                               class="form-control"
+                               id="last_name_input"
+                               aria-label="last name entry"
+                               value="Smith">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="email">Email</span>
+                        <input type="text"
+                               class="form-control"
+                               id="email_input"
+                               aria-label="email entry"
+                               value="Smith@gmail.com">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Pair: span ID, input ID
+            const pairs = [
+                { spanId: "first_name", inputId: "first_name_input" },
+                { spanId: "last_name", inputId: "last_name_input" },
+                { spanId: "email", inputId: "email_input" }
+            ];
+
+            pairs.forEach(pair => {
+                const span = document.getElementById(pair.spanId);
+                const input = document.getElementById(pair.inputId);
+
+                if (span && input) {
+                    span.style.cursor = "pointer"; // Give user feedback
+                    span.addEventListener("click", function () {
+                        input.focus();
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",
+            () => {
+
+
+                /*
+                 * Provides the ability to add outlines to every single element on a page
+                 * Usage: Pass true to toggle for development environment, false for other environments
+                 * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+                */
+                document.addEventListener('keydown',
+                    function (event) {
+
+                        if (event.key === '1' && event.altKey && event.ctrlKey) {
+                            // this is for development environment
+                            $debugHelper.toggle(true);
+                        }
+
+
+                    });
+
+
+            });
+
+    </script>
+
+
+</body>
+</html>

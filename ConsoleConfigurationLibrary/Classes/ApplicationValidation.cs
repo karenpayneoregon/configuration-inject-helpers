@@ -1,6 +1,7 @@
-﻿using System.Linq.Expressions;
-using ConsoleConfigurationLibrary.Models;
+﻿using ConsoleConfigurationLibrary.Models;
 using Microsoft.Extensions.Configuration;
+using System.Linq.Expressions;
+using System.Net.NetworkInformation;
 using static ConsoleConfigurationLibrary.Classes.Configuration;
 
 namespace ConsoleConfigurationLibrary.Classes;
@@ -139,6 +140,56 @@ public class ApplicationValidation
                 throw new InvalidOperationException($"The required property '{propertyName}' is missing.");
             }
         }
+    }
+
+    /// <summary>
+    /// Validates the specified configuration section and its properties during application startup.
+    /// </summary>
+    /// <typeparam name="T">
+    /// The type representing the configuration section to validate. This type must be a class.
+    /// </typeparam>
+    /// <param name="sectionName">
+    /// The name of the configuration section to validate.
+    /// </param>
+    /// <param name="propertySelectors">
+    /// An array of expressions selecting the properties of the configuration section to validate.
+    /// </param>
+    /// <returns>
+    /// A tuple containing a boolean indicating whether the validation succeeded and a list of error messages, if any.
+    /// </returns>
+    /// <remarks>
+    /// This method checks if the specified configuration section exists and validates the selected properties.
+    /// If any required property is missing or invalid, it returns a list of error messages.
+    /// </remarks>
+    public static (bool valid, List<string> errors) ValidateOnStartReporter<T>(string sectionName, params Expression<Func<T, string>>[] propertySelectors) where T : class
+    {
+        List<string> errorList = [];
+        if (!ConnectionHelpers.SectionExists(sectionName))
+        {
+            return (false, [$"The required configuration section '{sectionName}' is missing."]);
+        }
+
+        var section = JsonRoot().GetRequiredSection(sectionName).Get<T>();
+
+        if (section is null) return (false, [$"The required configuration section '{sectionName}' is missing."]);
+
+        foreach (var selector in propertySelectors)
+        {
+            var compiledSelector = selector.Compile();
+            var propertyName = GetPropertyName(selector);
+            var value = compiledSelector(section);
+
+            if (value is not null)
+            {
+                Connection.Validator(value);
+            }
+            else
+            {
+                errorList.Add($"The required property '{propertyName}' is missing.");
+            }
+        }
+
+        return errorList.Count == 0 ? (true, new List<string>()) : (false, errorList);
     }
 
     /// <summary>

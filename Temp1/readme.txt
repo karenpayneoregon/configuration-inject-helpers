@@ -1,0 +1,1 @@
+index page shows one input-group that is clickable while index1 shows how to do input-group with multiple inputs.

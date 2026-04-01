@@ -5,14 +5,14 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<Company>Karen Payne</Company>
-		<AssemblyVersion>1.0.0.11</AssemblyVersion>
-		<FileVersion>1.0.0.11</FileVersion>
-		<Version>1.0.0.11</Version>
+		<AssemblyVersion>1.0.0.13</AssemblyVersion>
+		<FileVersion>1.0.0.13</FileVersion>
+		<Version>1.0.0.13</Version>
 		<PackageTags>csharp;appsettings.json;ef-core</PackageTags>
 		<!--<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>-->
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<RepositoryType>git</RepositoryType>
-		<PackageReleaseNotes>Added option for creating bogus data</PackageReleaseNotes>
+		<PackageReleaseNotes>Added ApplicationValidation.ValidateOnStartReporter</PackageReleaseNotes>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Provides functionality to read connections strings from appsettings.json using dependency injection</Title>
 		<Description>Provides functionality to read connections strings from appsettings.json using dependency injection</Description>

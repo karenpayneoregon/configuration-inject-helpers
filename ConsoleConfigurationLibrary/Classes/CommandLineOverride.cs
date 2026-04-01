@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using System;
 
 namespace ConsoleConfigurationLibrary.Classes;
 /// <summary>
@@ -13,9 +14,11 @@ public class CommandLineOverride
     /// <returns>The configuration root.</returns>
     public static IConfigurationRoot BuilderRoot(string[] args)
     {
+        string environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Development";
         var builder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .AddJsonFile($"appsettings.{environment}.json", optional: true, reloadOnChange: true)
             .AddEnvironmentVariables();
 
         if (args is not null)
